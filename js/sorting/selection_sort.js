@@ -1,10 +1,12 @@
 (function(){
 
 	function SelectionSort(arr){
+		this._arr = arr;
 		this.sort(arr);
 	}
 
 	SelectionSort.prototype = {
+		constructor: SelectionSort,
 		sort: function(arr){
 			var i,
 				j,
@@ -24,16 +26,16 @@
 					swap(arr, i, min);
 			}
 
-			return arr;	
+			return arr;
 		},
 		swap: function(arr, first, last){
 			var temp = arr[first];
 
-			arr[first] 	= iarr[second];
+			arr[first] 	= arr[second];
 			arr[second] = temp;
 		},
-		toString: function(arr){
-			console.dir(arr);
+		toString: function(){
+			console.dir(this._arr);
 		}
 	}
 });
